@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our News</title>
+    <title>Our Blogs</title>
     <!-- Font Link -->
     <script src="https://kit.fontawesome.com/1ebe678dea.js" crossorigin="anonymous"></script>
     <!-- cdn  -->
@@ -26,7 +26,7 @@
 
             <div class="flex-none">
                 <div class="mr-4 font-bold">
-                    <a href="#" target="_blank" class="text-neutral-400 text-xl font-bold">News </a>
+                    <a href="index.html" target="_blank" class="text-neutral-400 text-xl font-bold">News </a>
 
                     <a href="#" class="text-blue-600 inline-block ml-5 border-b-blue-600 border-b-4 text-xl font-bold">
                         Blog</a>
@@ -39,3 +39,51 @@
         <div class="mt-6 border-b-2 border-b-gray-300 container"></div>
     </header>
     <!-- Header End -->
+
+    <main class="p-6">
+        <div class="text-lg border-solid border-2 border-blue-600 rounded-lg shadow-lg ">
+            <h1 class="text-xl m-3 underline text-blue-600 ">
+                Difference between var let and const?
+            </h1>
+            <p class="m-3">
+                The differences between var, let, and const variable declaration in JavaScript include:
+                Variables declared with var and const are scoped to the immediate function body.
+                Variables declared with the var keyword are hoisted. Hoisting means that the variable can be accessed in
+                their enclosing scope even before they are declared.
+                Variables declared with the let keyword are block-scoped, which means the variables will have scope to
+                the immediate enclosing block.The const keyword follows the same rules as the let keyword. The only
+                difference with const is that const is used to define only constant values in JavaScript programs.
+
+            </p>
+        </div>
+        <div class="text-lg border-solid border-2 border-blue-600 rounded-lg shadow-lg mt-6 ">
+            <h1 class="text-xl m-3 underline text-blue-600 ">
+                Difference between arrow function and Regular function?
+            </h1>
+
+            <p class="m-3">JavaScript's arrow functions might seem the same as regular functions on the surface, but
+                they have some very important differences:
+            <ol class="ml-5">
+                <li>Syntactical differences</li>
+                <li>this value (execution context)</li>
+                <li>Usage as methods</li>
+                <li>Usage as constructors</li>
+                <li> arguments binding</li>
+            </ol>
+            </p>
+        </div>
+        <div class="border-solid border-2 border-blue-600 rounded-lg shadow-lg mt-6">
+            <h1 class="text-xl m-3 underline text-blue-600 ">
+                Why we use Tamplate String?
+            </h1>
+            <p class="m-3 text-lg ">Template literals are sometimes informally called template strings, because they are
+                used most commonly for string interpolation (to create strings by doing substitution of placeholders).
+                However, a tagged template literal may not result in a string; it can be used with a custom tag function
+                to perform whatever operations you want on the different parts of the template literal.
+            </p>
+        </div>
+
+    </main>
+</body>
+
+</html>

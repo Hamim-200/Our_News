@@ -90,7 +90,7 @@
         <!-- Sort view end  -->
 
         <!-- spinner start -->
-        <div class="text-center">
+        <div id="spinner" class="text-center">
             <div role="status">
                 <svg class="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                     viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +112,16 @@
         </section>
         <!-- News Section end -->
 
+        <!-- Modal Start  -->
+        <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+        <div class="modal">
+            <div class="modal-box relative">
+                <label for="my-modal-4" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
+                <div id="modal-body"></div>
+            </div>
+        </div>
+        <!-- Modal End -->
     </main>
     <!-- Main End -->
 

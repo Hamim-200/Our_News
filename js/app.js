@@ -91,7 +91,7 @@ const displayCard = async (cards) => {
                   
               <div class="flex" >
                 <div>
-                  <img src="img/icons8-eye-24.png" alt="">
+                <p> Seen By : </p>
                 </div>
                 <div class="flex ml-3 items-center">
                   <h1><span>${total_view ? total_view : "no views"}</span> M</h1> 

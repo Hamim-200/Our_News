@@ -20,12 +20,16 @@ const displayCategory = async (data) => {
         const categoryContainer = document.getElementById('category-container')
         const li = document.createElement('li');
         li.classList.add("font-semibold", "text-md", "lg:text-xl")
-        li.innerHTML = `<a onclick="loadCard(${category_id})" >${category_name}</a>`
+        li.innerHTML = `
+      <a onclick="loadCard(${category_id})" >${category_name}</a>
+      `
         categoryContainer.appendChild(li);
 
     });
 
 }
+
+
 
 const loadCard = async (id) => {
     const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;

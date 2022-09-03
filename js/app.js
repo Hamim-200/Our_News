@@ -11,20 +11,17 @@ const loadCategory = async () => {
 }
 
 const displayCategory = async (data) => {
-    // console.log(data);
-    data.forEach(category => {
-        // console.log(category);
-        const { category_id, category_name } = category;
-        // console.log(category_name);
 
+    data.forEach(category => {
+        const { category_id, category_name } = category;
         const categoryContainer = document.getElementById('category-container')
         const li = document.createElement('li');
         li.classList.add("font-semibold", "text-md", "lg:text-xl")
         li.innerHTML = `
-      <a onclick="loadCard(${category_id})" >${category_name}</a>
-      `
-        categoryContainer.appendChild(li);
+        <a onclick = "loadCard(${category_id})">${category_name}</a>
 
+        `
+        categoryContainer.appendChild(li);
     });
 
 }
@@ -44,12 +41,9 @@ const loadCard = async (id) => {
 }
 
 const displayCard = async (cards) => {
-    // console.log(cards);
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
 
-
-    // No Found 
     const noFound = document.getElementById('no-found')
     noFound.classList.remove('hidden')
     // item count 
@@ -58,7 +52,6 @@ const displayCard = async (cards) => {
     // spinner 
     const spinner = document.getElementById('spinner');
     spinner.classList.remove('hidden');
-
 
     const sortViews = cards.sort((a, b) => {
         if (a.total_view < b.total_view) {
@@ -70,7 +63,6 @@ const displayCard = async (cards) => {
 
 
     cards.forEach(card => {
-        // console.log(card);
         const { _id, title, thumbnail_url, details, author, total_view, rating, category_id } = card;
         const { name, published_date, img } = author;
 
@@ -78,18 +70,18 @@ const displayCard = async (cards) => {
         const spinner = document.getElementById('spinner');
         spinner.classList.add('hidden');
 
-
         const cardDiv = document.createElement('div');
         cardDiv.classList.add("card", "lg:card-side", "bg-base-100", "shadow-xl", "mb-5", "mx-auto", "w-11/12");
         cardDiv.innerHTML = `
-      <figure class="w-full lg:w-1/4"><img src="${thumbnail_url}" alt="Movie"></figure>
+
+        <figure class="w-full lg:w-1/4"><img src="${thumbnail_url}" alt="No Image"></figure>
         <div class="card-body lg:w-3/4">
-          <h2 class="card-title">${title}</h2>
-          <p>${details.length > 400 ? details.slice(0, 400) + " ....." : details}</p>
-          <div class="card-actions justify-between items-center">                   
+        <h2 class="card-title">${title}</h2>
+        <p>${details.length > 400 ? details.slice(0, 400) + " ....." : details}</p>
+        <div class="card-actions justify-between items-center">                   
             <div class="flex">
               <div class="mr-3">
-                <img class="w-[40px] rounded-full" src="${img ? img : "img not found"}" alt="">
+                <img class="w-[40px] rounded-full" src="${img ? img : "image not found"}" alt="">
               </div>
               <div >
                 <h4 class="font-bold text-xl">${name ? name : "name not found"}</h4>
@@ -114,11 +106,11 @@ const displayCard = async (cards) => {
                 </div>
                 <div>
                 <label for="my-modal-4" class="btn btn-primary modal-button" onclick="showModal('${_id}')"><i class="fa-solid fa-arrow-right"></i></label>
-                </div>
-                          
+                </div>      
+
               </div>
           </div>
-      
+
       `
         cardContainer.appendChild(cardDiv);
 
@@ -131,7 +123,7 @@ const showModal = async (id) => {
     const url = `https://openapi.programming-hero.com/api/news/${id}`
     const res = await fetch(url);
     const data = await res.json();
-    // console.log(data.data);
+
     const { name, img, published_date } = data.data[0].author;
     const modalBody = document.getElementById('modal-body');
     modalBody.textContent = "";
@@ -142,8 +134,8 @@ const showModal = async (id) => {
   `
 }
 
-//Card Load By default
+
 loadCard('2');
 
-//load category
+
 loadCategory();
